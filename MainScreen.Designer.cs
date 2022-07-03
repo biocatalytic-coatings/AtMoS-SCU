@@ -35,6 +35,7 @@
             this.experimentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNOGasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anotherOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aquisitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newContinuousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pulsedStandaloneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,7 +121,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.bwGasCont = new System.ComponentModel.BackgroundWorker();
             this.bwgasPulsed = new System.ComponentModel.BackgroundWorker();
-            this.anotherOneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -171,7 +171,7 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -179,9 +179,15 @@
             // 
             this.addNOGasToolStripMenuItem.Enabled = false;
             this.addNOGasToolStripMenuItem.Name = "addNOGasToolStripMenuItem";
-            this.addNOGasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNOGasToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.addNOGasToolStripMenuItem.Text = "Add NO Gas";
             this.addNOGasToolStripMenuItem.Visible = false;
+            // 
+            // anotherOneToolStripMenuItem
+            // 
+            this.anotherOneToolStripMenuItem.Name = "anotherOneToolStripMenuItem";
+            this.anotherOneToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.anotherOneToolStripMenuItem.Text = "Another one";
             // 
             // aquisitionToolStripMenuItem
             // 
@@ -927,12 +933,6 @@
             // 
             this.bwgasPulsed.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwgasPulsed_DoWork);
             // 
-            // anotherOneToolStripMenuItem
-            // 
-            this.anotherOneToolStripMenuItem.Name = "anotherOneToolStripMenuItem";
-            this.anotherOneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.anotherOneToolStripMenuItem.Text = "Another one";
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -949,7 +949,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AtMoS 4.1";
+            this.Text = "AtMoS - SCU";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
