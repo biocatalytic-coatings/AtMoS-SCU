@@ -55,6 +55,8 @@ namespace AtMoS3
             //  Here we make changes to the program features at runtime depending on which organisation
             //  is using the program.  The active features are determined by the value 
             //  of "User" in the app.config file.
+
+            /*
             if (version == "Southern Cross University")
             {
                 this.Text = "Atmos4.1 - SCU";
@@ -68,6 +70,7 @@ namespace AtMoS3
                 this.Text = "Atmos4.1 - Illawarra Coatings";
                 toolStripStatusLabel1.Text = "AtMoS - Licensed to Illawarra Coatings.";
             }
+            */
 
             //  This code simply removes the label text used during design.
             lblSystemTime.Text = "";
