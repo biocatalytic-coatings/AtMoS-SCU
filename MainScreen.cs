@@ -58,8 +58,10 @@ namespace AtMoS3
             if (version == "Southern Cross University")
             {
                 this.Text = "Atmos4.1 - SCU";
-                tabControl1.TabPages.Remove(Sample);
-                toolStripStatusLabel1.Text = "AtMoS - Licensed to Faculty of Science and Engineering - Southern Cross University.";
+                //tabControl1.TabPages.Remove(Sample);
+                tabControl1.TabPages.Remove(GasAddition);
+                tabControl1.TabPages.Remove(BME280Constants);
+                toolStripStatusLabel1.Text = "AtMoS - Licensed to Southern Cross University.";
             }
             else
             {
@@ -509,6 +511,26 @@ namespace AtMoS3
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void txtAdafruitUpdateInterval_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNOWE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNOAE_Click(object sender, EventArgs e)
         {
 
         }

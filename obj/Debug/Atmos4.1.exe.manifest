@@ -42,24 +42,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Atmos4.1.exe" size="50888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Atmos4.1.exe" size="51400">
       <assemblyIdentity name="Atmos4.1" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uoK/VfZztm4aGKLk6rwsQL4qjKy4bhZXkAXD4efRoUo=</dsig:DigestValue>
+        <dsig:DigestValue>ndV4+lzc5JdMv/lBqcMb7gvd5HUqzAaBIg49t/W2dRg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Atmos4.1.exe.config" size="1107">
+  <file name="Atmos4.1.exe.config" size="1114">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>UrythYwnxBKhveQyUamPeAE9ObjpTmG1gYLdAk1vooo=</dsig:DigestValue>
+      <dsig:DigestValue>CNXJEJ2jnP6EFOI7EMlTYbJNJusrZ2XZ6yCSC7J385c=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

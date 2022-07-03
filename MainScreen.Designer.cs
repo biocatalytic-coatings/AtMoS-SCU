@@ -99,7 +99,7 @@
             this.txtGasAdditionTime = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.BME280Constants = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -130,7 +130,7 @@
             this.Volts.SuspendLayout();
             this.Sample.SuspendLayout();
             this.GasAddition.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.BME280Constants.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,7 +172,7 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -180,15 +180,16 @@
             // 
             this.addNOGasToolStripMenuItem.Enabled = false;
             this.addNOGasToolStripMenuItem.Name = "addNOGasToolStripMenuItem";
-            this.addNOGasToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.addNOGasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNOGasToolStripMenuItem.Text = "Add NO Gas";
             this.addNOGasToolStripMenuItem.Visible = false;
             // 
             // anotherOneToolStripMenuItem
             // 
             this.anotherOneToolStripMenuItem.Name = "anotherOneToolStripMenuItem";
-            this.anotherOneToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.anotherOneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.anotherOneToolStripMenuItem.Text = "Another one";
+            this.anotherOneToolStripMenuItem.Visible = false;
             // 
             // aquisitionToolStripMenuItem
             // 
@@ -348,7 +349,7 @@
             this.tabControl1.Controls.Add(this.Volts);
             this.tabControl1.Controls.Add(this.Sample);
             this.tabControl1.Controls.Add(this.GasAddition);
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.BME280Constants);
             this.tabControl1.Location = new System.Drawing.Point(7, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -384,6 +385,7 @@
             this.lblPressure.Size = new System.Drawing.Size(58, 13);
             this.lblPressure.TabIndex = 17;
             this.lblPressure.Text = "lblPressure";
+            this.lblPressure.Visible = false;
             // 
             // label18
             // 
@@ -393,6 +395,7 @@
             this.label18.Size = new System.Drawing.Size(168, 13);
             this.label18.TabIndex = 16;
             this.label18.Text = "Atmospheric pressure (/kPa)";
+            this.label18.Visible = false;
             // 
             // lblNO2Conc
             // 
@@ -403,6 +406,7 @@
             this.lblNO2Conc.Size = new System.Drawing.Size(64, 13);
             this.lblNO2Conc.TabIndex = 15;
             this.lblNO2Conc.Text = "lblNO2Conc";
+            this.lblNO2Conc.Visible = false;
             // 
             // lblNOConc
             // 
@@ -413,6 +417,7 @@
             this.lblNOConc.Size = new System.Drawing.Size(58, 13);
             this.lblNOConc.TabIndex = 14;
             this.lblNOConc.Text = "lblNOConc";
+            this.lblNOConc.Visible = false;
             // 
             // lblNO2ConcLabel
             // 
@@ -422,6 +427,7 @@
             this.lblNO2ConcLabel.Size = new System.Drawing.Size(176, 13);
             this.lblNO2ConcLabel.TabIndex = 13;
             this.lblNO2ConcLabel.Text = "Nitrogen dioxide conc. (ppbV)";
+            this.lblNO2ConcLabel.Visible = false;
             // 
             // lblNOConcLabel
             // 
@@ -431,6 +437,7 @@
             this.lblNOConcLabel.Size = new System.Drawing.Size(148, 13);
             this.lblNOConcLabel.TabIndex = 12;
             this.lblNOConcLabel.Text = "Nitric oxide conc. (ppbV)";
+            this.lblNOConcLabel.Visible = false;
             // 
             // lblHumidity
             // 
@@ -500,6 +507,7 @@
             this.txtNO2AEOffset.Size = new System.Drawing.Size(70, 20);
             this.txtNO2AEOffset.TabIndex = 31;
             this.txtNO2AEOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNO2AEOffset.Visible = false;
             // 
             // txtNO2WEOffset
             // 
@@ -508,12 +516,13 @@
             this.txtNO2WEOffset.Size = new System.Drawing.Size(70, 20);
             this.txtNO2WEOffset.TabIndex = 30;
             this.txtNO2WEOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNO2WEOffset.Visible = false;
             // 
             // lblNO2AE
             // 
             this.lblNO2AE.AutoSize = true;
             this.lblNO2AE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNO2AE.Location = new System.Drawing.Point(195, 118);
+            this.lblNO2AE.Location = new System.Drawing.Point(234, 118);
             this.lblNO2AE.Name = "lblNO2AE";
             this.lblNO2AE.Size = new System.Drawing.Size(53, 13);
             this.lblNO2AE.TabIndex = 29;
@@ -523,7 +532,7 @@
             // 
             this.lblNO2WE.AutoSize = true;
             this.lblNO2WE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNO2WE.Location = new System.Drawing.Point(195, 93);
+            this.lblNO2WE.Location = new System.Drawing.Point(234, 93);
             this.lblNO2WE.Name = "lblNO2WE";
             this.lblNO2WE.Size = new System.Drawing.Size(57, 13);
             this.lblNO2WE.TabIndex = 28;
@@ -551,21 +560,23 @@
             // 
             this.lblNOAE.AutoSize = true;
             this.lblNOAE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNOAE.Location = new System.Drawing.Point(195, 68);
+            this.lblNOAE.Location = new System.Drawing.Point(234, 68);
             this.lblNOAE.Name = "lblNOAE";
             this.lblNOAE.Size = new System.Drawing.Size(47, 13);
             this.lblNOAE.TabIndex = 25;
             this.lblNOAE.Text = "lblNOAE";
+            this.lblNOAE.Click += new System.EventHandler(this.lblNOAE_Click);
             // 
             // lblNOWE
             // 
             this.lblNOWE.AutoSize = true;
             this.lblNOWE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNOWE.Location = new System.Drawing.Point(195, 43);
+            this.lblNOWE.Location = new System.Drawing.Point(234, 43);
             this.lblNOWE.Name = "lblNOWE";
             this.lblNOWE.Size = new System.Drawing.Size(51, 13);
             this.lblNOWE.TabIndex = 24;
             this.lblNOWE.Text = "lblNOWE";
+            this.lblNOWE.Click += new System.EventHandler(this.lblNOWE_Click);
             // 
             // txtNOAEOffset
             // 
@@ -574,6 +585,7 @@
             this.txtNOAEOffset.Size = new System.Drawing.Size(70, 20);
             this.txtNOAEOffset.TabIndex = 23;
             this.txtNOAEOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNOAEOffset.Visible = false;
             // 
             // txtNOWEOffset
             // 
@@ -582,6 +594,7 @@
             this.txtNOWEOffset.Size = new System.Drawing.Size(70, 20);
             this.txtNOWEOffset.TabIndex = 22;
             this.txtNOWEOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNOWEOffset.Visible = false;
             // 
             // label9
             // 
@@ -591,15 +604,17 @@
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 21;
             this.label9.Text = "Offset";
+            this.label9.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(179, 18);
+            this.label8.Location = new System.Drawing.Point(218, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Current Value";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -643,17 +658,18 @@
             // txtAdafruitUpdateInterval
             // 
             this.txtAdafruitUpdateInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdafruitUpdateInterval.Location = new System.Drawing.Point(280, 135);
+            this.txtAdafruitUpdateInterval.Location = new System.Drawing.Point(280, 107);
             this.txtAdafruitUpdateInterval.Name = "txtAdafruitUpdateInterval";
             this.txtAdafruitUpdateInterval.Size = new System.Drawing.Size(53, 20);
             this.txtAdafruitUpdateInterval.TabIndex = 11;
             this.txtAdafruitUpdateInterval.Text = "15";
             this.txtAdafruitUpdateInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAdafruitUpdateInterval.TextChanged += new System.EventHandler(this.txtAdafruitUpdateInterval_TextChanged);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(18, 135);
+            this.label22.Location = new System.Drawing.Point(18, 110);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(199, 13);
             this.label22.TabIndex = 10;
@@ -662,21 +678,23 @@
             // txtOffsetCalibrationTime
             // 
             this.txtOffsetCalibrationTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOffsetCalibrationTime.Location = new System.Drawing.Point(280, 107);
+            this.txtOffsetCalibrationTime.Location = new System.Drawing.Point(280, 139);
             this.txtOffsetCalibrationTime.Name = "txtOffsetCalibrationTime";
             this.txtOffsetCalibrationTime.Size = new System.Drawing.Size(53, 20);
             this.txtOffsetCalibrationTime.TabIndex = 9;
             this.txtOffsetCalibrationTime.Text = "60";
             this.txtOffsetCalibrationTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtOffsetCalibrationTime.Visible = false;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(18, 110);
+            this.label17.Location = new System.Drawing.Point(18, 142);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(205, 13);
             this.label17.TabIndex = 8;
             this.label17.Text = "Offset calibration interval (minutes)";
+            this.label17.Visible = false;
             // 
             // txtClimateUpdatedInterval
             // 
@@ -826,19 +844,19 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Gas addition time (seconds)";
             // 
-            // tabPage1
+            // BME280Constants
             // 
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.label26);
-            this.tabPage1.Controls.Add(this.label25);
-            this.tabPage1.Controls.Add(this.label24);
-            this.tabPage1.Controls.Add(this.label23);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(407, 167);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "BME280 Constants";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.BME280Constants.Controls.Add(this.label27);
+            this.BME280Constants.Controls.Add(this.label26);
+            this.BME280Constants.Controls.Add(this.label25);
+            this.BME280Constants.Controls.Add(this.label24);
+            this.BME280Constants.Controls.Add(this.label23);
+            this.BME280Constants.Location = new System.Drawing.Point(4, 22);
+            this.BME280Constants.Name = "BME280Constants";
+            this.BME280Constants.Size = new System.Drawing.Size(407, 167);
+            this.BME280Constants.TabIndex = 5;
+            this.BME280Constants.Text = "BME280 Constants";
+            this.BME280Constants.UseVisualStyleBackColor = true;
             // 
             // label27
             // 
@@ -967,8 +985,8 @@
             this.Sample.PerformLayout();
             this.GasAddition.ResumeLayout(false);
             this.GasAddition.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.BME280Constants.ResumeLayout(false);
+            this.BME280Constants.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1062,7 +1080,7 @@
         private System.ComponentModel.BackgroundWorker bwGasCont;
         private System.ComponentModel.BackgroundWorker bwgasPulsed;
         private System.Windows.Forms.ToolStripMenuItem pulsedStandaloneToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage BME280Constants;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
