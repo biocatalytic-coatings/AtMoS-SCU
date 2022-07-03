@@ -64,7 +64,7 @@
             this.lblTemperature = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Volts = new System.Windows.Forms.TabPage();
+            this.ElectrodeReadings = new System.Windows.Forms.TabPage();
             this.txtNO2AEOffset = new System.Windows.Forms.TextBox();
             this.txtNO2WEOffset = new System.Windows.Forms.TextBox();
             this.lblNO2AE = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Sample = new System.Windows.Forms.TabPage();
+            this.SamplingTimes = new System.Windows.Forms.TabPage();
             this.txtAdafruitUpdateInterval = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txtOffsetCalibrationTime = new System.Windows.Forms.TextBox();
@@ -92,19 +92,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.GasAddition = new System.Windows.Forms.TabPage();
-            this.txtGasAdditionCycles = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtElectrodeStabilisationTime = new System.Windows.Forms.TextBox();
-            this.txtGasAdditionTime = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.BME280Constants = new System.Windows.Forms.TabPage();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.tmrSystemTime = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -127,10 +114,8 @@
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Climate.SuspendLayout();
-            this.Volts.SuspendLayout();
-            this.Sample.SuspendLayout();
-            this.GasAddition.SuspendLayout();
-            this.BME280Constants.SuspendLayout();
+            this.ElectrodeReadings.SuspendLayout();
+            this.SamplingTimes.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,15 +191,16 @@
             // newContinuousToolStripMenuItem
             // 
             this.newContinuousToolStripMenuItem.Name = "newContinuousToolStripMenuItem";
-            this.newContinuousToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.newContinuousToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newContinuousToolStripMenuItem.Text = "Continuous";
+            this.newContinuousToolStripMenuItem.Visible = false;
             this.newContinuousToolStripMenuItem.Click += new System.EventHandler(this.newContinuousToolStripMenuItem_Click);
             // 
             // pulsedStandaloneToolStripMenuItem
             // 
             this.pulsedStandaloneToolStripMenuItem.Name = "pulsedStandaloneToolStripMenuItem";
-            this.pulsedStandaloneToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.pulsedStandaloneToolStripMenuItem.Text = "Pulsed";
+            this.pulsedStandaloneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pulsedStandaloneToolStripMenuItem.Text = "Start";
             this.pulsedStandaloneToolStripMenuItem.Click += new System.EventHandler(this.pulsedStandaloneToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -346,10 +332,8 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Climate);
-            this.tabControl1.Controls.Add(this.Volts);
-            this.tabControl1.Controls.Add(this.Sample);
-            this.tabControl1.Controls.Add(this.GasAddition);
-            this.tabControl1.Controls.Add(this.BME280Constants);
+            this.tabControl1.Controls.Add(this.ElectrodeReadings);
+            this.tabControl1.Controls.Add(this.SamplingTimes);
             this.tabControl1.Location = new System.Drawing.Point(7, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -477,28 +461,28 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Temperature (deg C)";
             // 
-            // Volts
+            // ElectrodeReadings
             // 
-            this.Volts.Controls.Add(this.txtNO2AEOffset);
-            this.Volts.Controls.Add(this.txtNO2WEOffset);
-            this.Volts.Controls.Add(this.lblNO2AE);
-            this.Volts.Controls.Add(this.lblNO2WE);
-            this.Volts.Controls.Add(this.label11);
-            this.Volts.Controls.Add(this.label10);
-            this.Volts.Controls.Add(this.lblNOAE);
-            this.Volts.Controls.Add(this.lblNOWE);
-            this.Volts.Controls.Add(this.txtNOAEOffset);
-            this.Volts.Controls.Add(this.txtNOWEOffset);
-            this.Volts.Controls.Add(this.label9);
-            this.Volts.Controls.Add(this.label8);
-            this.Volts.Controls.Add(this.label7);
-            this.Volts.Controls.Add(this.label6);
-            this.Volts.Location = new System.Drawing.Point(4, 22);
-            this.Volts.Name = "Volts";
-            this.Volts.Size = new System.Drawing.Size(407, 167);
-            this.Volts.TabIndex = 3;
-            this.Volts.Text = "Electrode readings";
-            this.Volts.UseVisualStyleBackColor = true;
+            this.ElectrodeReadings.Controls.Add(this.txtNO2AEOffset);
+            this.ElectrodeReadings.Controls.Add(this.txtNO2WEOffset);
+            this.ElectrodeReadings.Controls.Add(this.lblNO2AE);
+            this.ElectrodeReadings.Controls.Add(this.lblNO2WE);
+            this.ElectrodeReadings.Controls.Add(this.label11);
+            this.ElectrodeReadings.Controls.Add(this.label10);
+            this.ElectrodeReadings.Controls.Add(this.lblNOAE);
+            this.ElectrodeReadings.Controls.Add(this.lblNOWE);
+            this.ElectrodeReadings.Controls.Add(this.txtNOAEOffset);
+            this.ElectrodeReadings.Controls.Add(this.txtNOWEOffset);
+            this.ElectrodeReadings.Controls.Add(this.label9);
+            this.ElectrodeReadings.Controls.Add(this.label8);
+            this.ElectrodeReadings.Controls.Add(this.label7);
+            this.ElectrodeReadings.Controls.Add(this.label6);
+            this.ElectrodeReadings.Location = new System.Drawing.Point(4, 22);
+            this.ElectrodeReadings.Name = "ElectrodeReadings";
+            this.ElectrodeReadings.Size = new System.Drawing.Size(407, 167);
+            this.ElectrodeReadings.TabIndex = 3;
+            this.ElectrodeReadings.Text = "Electrode readings";
+            this.ElectrodeReadings.UseVisualStyleBackColor = true;
             // 
             // txtNO2AEOffset
             // 
@@ -634,26 +618,26 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "NO WE (/volts)";
             // 
-            // Sample
+            // SamplingTimes
             // 
-            this.Sample.Controls.Add(this.txtAdafruitUpdateInterval);
-            this.Sample.Controls.Add(this.label22);
-            this.Sample.Controls.Add(this.txtOffsetCalibrationTime);
-            this.Sample.Controls.Add(this.label17);
-            this.Sample.Controls.Add(this.txtClimateUpdatedInterval);
-            this.Sample.Controls.Add(this.label16);
-            this.Sample.Controls.Add(this.txtSleepTime);
-            this.Sample.Controls.Add(this.txtSamplingTime);
-            this.Sample.Controls.Add(this.txtPurgeTime);
-            this.Sample.Controls.Add(this.label14);
-            this.Sample.Controls.Add(this.label13);
-            this.Sample.Controls.Add(this.label12);
-            this.Sample.Location = new System.Drawing.Point(4, 22);
-            this.Sample.Name = "Sample";
-            this.Sample.Size = new System.Drawing.Size(407, 167);
-            this.Sample.TabIndex = 2;
-            this.Sample.Text = "Sampling rates";
-            this.Sample.UseVisualStyleBackColor = true;
+            this.SamplingTimes.Controls.Add(this.txtAdafruitUpdateInterval);
+            this.SamplingTimes.Controls.Add(this.label22);
+            this.SamplingTimes.Controls.Add(this.txtOffsetCalibrationTime);
+            this.SamplingTimes.Controls.Add(this.label17);
+            this.SamplingTimes.Controls.Add(this.txtClimateUpdatedInterval);
+            this.SamplingTimes.Controls.Add(this.label16);
+            this.SamplingTimes.Controls.Add(this.txtSleepTime);
+            this.SamplingTimes.Controls.Add(this.txtSamplingTime);
+            this.SamplingTimes.Controls.Add(this.txtPurgeTime);
+            this.SamplingTimes.Controls.Add(this.label14);
+            this.SamplingTimes.Controls.Add(this.label13);
+            this.SamplingTimes.Controls.Add(this.label12);
+            this.SamplingTimes.Location = new System.Drawing.Point(4, 22);
+            this.SamplingTimes.Name = "SamplingTimes";
+            this.SamplingTimes.Size = new System.Drawing.Size(407, 167);
+            this.SamplingTimes.TabIndex = 2;
+            this.SamplingTimes.Text = "Sampling rates";
+            this.SamplingTimes.UseVisualStyleBackColor = true;
             // 
             // txtAdafruitUpdateInterval
             // 
@@ -775,134 +759,6 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Sensor purge time (seconds)";
             // 
-            // GasAddition
-            // 
-            this.GasAddition.Controls.Add(this.txtGasAdditionCycles);
-            this.GasAddition.Controls.Add(this.label21);
-            this.GasAddition.Controls.Add(this.txtElectrodeStabilisationTime);
-            this.GasAddition.Controls.Add(this.txtGasAdditionTime);
-            this.GasAddition.Controls.Add(this.label20);
-            this.GasAddition.Controls.Add(this.label19);
-            this.GasAddition.Location = new System.Drawing.Point(4, 22);
-            this.GasAddition.Name = "GasAddition";
-            this.GasAddition.Size = new System.Drawing.Size(407, 167);
-            this.GasAddition.TabIndex = 4;
-            this.GasAddition.Text = "NO Gas Addn.";
-            this.GasAddition.UseVisualStyleBackColor = true;
-            // 
-            // txtGasAdditionCycles
-            // 
-            this.txtGasAdditionCycles.Location = new System.Drawing.Point(305, 78);
-            this.txtGasAdditionCycles.Name = "txtGasAdditionCycles";
-            this.txtGasAdditionCycles.Size = new System.Drawing.Size(59, 20);
-            this.txtGasAdditionCycles.TabIndex = 5;
-            this.txtGasAdditionCycles.Text = "5";
-            this.txtGasAdditionCycles.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(20, 78);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 13);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Cycles";
-            // 
-            // txtElectrodeStabilisationTime
-            // 
-            this.txtElectrodeStabilisationTime.Location = new System.Drawing.Point(305, 50);
-            this.txtElectrodeStabilisationTime.Name = "txtElectrodeStabilisationTime";
-            this.txtElectrodeStabilisationTime.Size = new System.Drawing.Size(59, 20);
-            this.txtElectrodeStabilisationTime.TabIndex = 3;
-            this.txtElectrodeStabilisationTime.Text = "180";
-            this.txtElectrodeStabilisationTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGasAdditionTime
-            // 
-            this.txtGasAdditionTime.Location = new System.Drawing.Point(305, 23);
-            this.txtGasAdditionTime.Name = "txtGasAdditionTime";
-            this.txtGasAdditionTime.Size = new System.Drawing.Size(59, 20);
-            this.txtGasAdditionTime.TabIndex = 2;
-            this.txtGasAdditionTime.Text = "22.5";
-            this.txtGasAdditionTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(20, 51);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(218, 13);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Electrode stabilisation time (seconds)";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(20, 23);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 13);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Gas addition time (seconds)";
-            // 
-            // BME280Constants
-            // 
-            this.BME280Constants.Controls.Add(this.label27);
-            this.BME280Constants.Controls.Add(this.label26);
-            this.BME280Constants.Controls.Add(this.label25);
-            this.BME280Constants.Controls.Add(this.label24);
-            this.BME280Constants.Controls.Add(this.label23);
-            this.BME280Constants.Location = new System.Drawing.Point(4, 22);
-            this.BME280Constants.Name = "BME280Constants";
-            this.BME280Constants.Size = new System.Drawing.Size(407, 167);
-            this.BME280Constants.TabIndex = 5;
-            this.BME280Constants.Text = "BME280 Constants";
-            this.BME280Constants.UseVisualStyleBackColor = true;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(303, 26);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(58, 13);
-            this.label27.TabIndex = 4;
-            this.label27.Text = "Intercept";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(206, 27);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 13);
-            this.label26.TabIndex = 3;
-            this.label26.Text = "Gradient";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(24, 124);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(129, 13);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Atmospheric Pressure";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(24, 92);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 13);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "Humidity";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(24, 59);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 13);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Temperature";
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -979,14 +835,10 @@
             this.tabControl1.ResumeLayout(false);
             this.Climate.ResumeLayout(false);
             this.Climate.PerformLayout();
-            this.Volts.ResumeLayout(false);
-            this.Volts.PerformLayout();
-            this.Sample.ResumeLayout(false);
-            this.Sample.PerformLayout();
-            this.GasAddition.ResumeLayout(false);
-            this.GasAddition.PerformLayout();
-            this.BME280Constants.ResumeLayout(false);
-            this.BME280Constants.PerformLayout();
+            this.ElectrodeReadings.ResumeLayout(false);
+            this.ElectrodeReadings.PerformLayout();
+            this.SamplingTimes.ResumeLayout(false);
+            this.SamplingTimes.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1012,7 +864,7 @@
         private System.Windows.Forms.TabPage Climate;
         private System.Windows.Forms.Label lblSystemTime;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabPage Sample;
+        private System.Windows.Forms.TabPage SamplingTimes;
         private System.Windows.Forms.Timer tmrSystemTime;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1029,7 +881,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.TabPage Volts;
+        private System.Windows.Forms.TabPage ElectrodeReadings;
         private System.Windows.Forms.Label lblNO2ConcLabel;
         private System.Windows.Forms.Label lblNOConcLabel;
         private System.Windows.Forms.TextBox txtNO2AEOffset;
@@ -1063,14 +915,7 @@
         private System.ComponentModel.BackgroundWorker bwGetGasContinuous;
         private System.Windows.Forms.TextBox txtOffsetCalibrationTime;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TabPage GasAddition;
-        private System.Windows.Forms.TextBox txtElectrodeStabilisationTime;
-        private System.Windows.Forms.TextBox txtGasAdditionTime;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ToolStripMenuItem addNOGasToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtGasAdditionCycles;
-        private System.Windows.Forms.Label label21;
         private System.ComponentModel.BackgroundWorker bwPublish2Adafruit;
         private System.Windows.Forms.TextBox txtAdafruitUpdateInterval;
         private System.Windows.Forms.Label label22;
@@ -1080,12 +925,6 @@
         private System.ComponentModel.BackgroundWorker bwGasCont;
         private System.ComponentModel.BackgroundWorker bwgasPulsed;
         private System.Windows.Forms.ToolStripMenuItem pulsedStandaloneToolStripMenuItem;
-        private System.Windows.Forms.TabPage BME280Constants;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ToolStripMenuItem anotherOneToolStripMenuItem;
     }
 }
