@@ -1,3 +1,2 @@
-# AtMoS-SCU
-
-A repository for the AtMoS code for Southern Cross University
+# AtMoS3D
+The development repository for the AtMoS3 version.
