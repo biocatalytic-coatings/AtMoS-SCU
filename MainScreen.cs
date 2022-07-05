@@ -197,7 +197,6 @@ namespace AtMoS3
 
         }
 
-
         private void setlblStatusTextSafely(string text)
         {
             //  We use the InvokeRequired method to prevent a  "Cross thread operation not valid".  This error occurs when we try to 
@@ -249,7 +248,6 @@ namespace AtMoS3
                 
         }
 
-
         private void bwGetSystemTime_DoWork(object sender, DoWorkEventArgs e)
         {
             //  Backgroundworker 2 is used to update the system time on the form.  System time is used both as a check that the 
@@ -270,7 +268,6 @@ namespace AtMoS3
                 }
             }            
         }
-                  
 
         private void publish2Adafruit()
         {
@@ -302,8 +299,6 @@ namespace AtMoS3
             {
             }
         }
-
-
 
         private void runPythonScript(string fileName, int myPin, int gpioState, string samplingTime, string programType)
         {
@@ -395,9 +390,7 @@ namespace AtMoS3
             //bwGetClimate.RunWorkerAsync();
 
             bwGasCont.RunWorkerAsync();
-        }
-
-        
+        }               
 
         private void bwGasCont_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -419,7 +412,6 @@ namespace AtMoS3
             }
         }
 
-
         private void bwgasPulsed_DoWork(object sender, DoWorkEventArgs e)
         {
             // 09/01/2021 1045 - Added this bw to return pulsed gas to stand alone code to fix adafruit update issue.
@@ -429,25 +421,27 @@ namespace AtMoS3
             {
                 DateTime newSample = (DateTime.Now).AddMilliseconds(Convert.ToInt32(txtSleepTime.Text) * 1000);
 
+                /* Removed because not need for SCU system.
                 setlblStatusTextSafely("Solenoid energised.");
                 
                 string openSolenoid = "Programs/pythonScripts/relayState";
                 string relay = "relay";
                 runPythonScript(openSolenoid, 26, 0, "1", relay);
                 Thread.Sleep(2000);
+                
+
                 setlblStatusTextSafely("Sensor purge cycle started.");
                 DateTime purgeTime = (DateTime.Now).AddMilliseconds(Convert.ToInt32(txtPurgeTime.Text) * 1000);
                 string startPump = "Programs/pythonScripts/relayState";
                 runPythonScript(startPump, 22, 0, "1", relay);
                 //  Now create a delay to allow time for the calibration hood to be purged.
 
-
                 while (DateTime.Now < purgeTime)
                 {
                     //  Create a loop
                 }
 
-
+                */
 
                 // Start the getGas.py program    
                 setlblStatusTextSafely("Analysing chamber atmospheric composition.");
@@ -463,11 +457,13 @@ namespace AtMoS3
                     //  Create a loop
                 }
 
+                /* Removed because not needed for SCU system.
                 setlblStatusTextSafely("Stopping the pump.");
                 string stopPump = "Programs/pythonScripts/relayState";
                 runPythonScript(stopPump, 22, 1, "1", relay);
                 //  Create a delay between the solenoid energising and the usb pump starting.
                 Thread.Sleep(2000);
+                */
 
                 setlblStatusTextSafely("Going to sleep.");
 
