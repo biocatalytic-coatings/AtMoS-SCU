@@ -125,7 +125,7 @@ namespace AtMoS3
 
                     //  Here we construct the datastrings.  The \r ending is important to ensure that each data entry begins on a new line.
                     string expDesc = txtExpDesc.Text + "\r";
-                    string dataHeadings = "Time stamp" + "," + "Atmospheric Pressure" + "," + "Temperature" + "," + "Humidity" + "," + "NOAE Volts" + "," + "NOWE Volts" + "," + "NO2AE Volts" + "," + "NO2WE Volts" + "\r";
+                    string dataHeadings = "Time stamp" + "," + "Temperature" + "," + "Humidity" + "," + "NOAE Volts" + "," + "NOWE Volts" + "," + "NO2AE Volts" + "," + "NO2WE Volts" + "\r";
 
                     // Write the datastring to the file "_logFileName".
                     using (StreamWriter outputFile = File.AppendText(logFileName))
@@ -164,7 +164,7 @@ namespace AtMoS3
             string _logFileName = lblDataFileLocation.Text + ".csv";
 
             //  Here we construct the datastring.  The \r ending is important to ensure that each data entry begins on a new line.
-            string _data2Write = timeStamp + "," + lblPressure.Text + "," + lblTemperature.Text + "," + lblHumidity.Text + "," + lblNOAE.Text + "," + lblNOWE.Text + "," + lblNO2AE.Text + "," + lblNO2WE.Text + "," + "\r";
+            string _data2Write = timeStamp + "," + lblTemperature.Text + "," + lblHumidity.Text + "," + lblNOAE.Text + "," + lblNOWE.Text + "," + lblNO2AE.Text + "," + lblNO2WE.Text + "," + "\r";
 
             // Write the datastring to the file "_logFileName".
             using (StreamWriter outputFile = File.AppendText(_logFileName))
@@ -467,104 +467,106 @@ namespace AtMoS3
 
                 setlblStatusTextSafely("Going to sleep.");
 
-                // De-energise and close the usb pump solenoid valve.
-                string closeSolenoid = "Programs/pythonScripts/relayState";
-                runPythonScript(closeSolenoid, 26, 1, "1", relay);
+                /* Removed because not needed for SCU system.
+               // De-energise and close the usb pump solenoid valve.
+               string closeSolenoid = "Programs/pythonScripts/relayState";
+               runPythonScript(closeSolenoid, 26, 1, "1", relay);
+                */
 
-                //  Write the results to the datafile.
-                write2DataFile();
+               //  Write the results to the datafile.
+               write2DataFile();
 
-                //  Publish the data to adafruit.io
-                publish2Adafruit();
+               //  Publish the data to adafruit.io
+               publish2Adafruit();
 
-                //  Now go to sleep for the designated time.
-                while (DateTime.Now < newSample)
-                {
-                    //  Create a loop
-                }
+               //  Now go to sleep for the designated time.
+               while (DateTime.Now < newSample)
+               {
+                   //  Create a loop
+               }
+
+           }
+
+
+       }
+
+       private void pulsedStandaloneToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+           bwGetClimate.RunWorkerAsync();
+           bwgasPulsed.RunWorkerAsync();
+       }
+
+       private void txtSamplingTime_TextChanged(object sender, EventArgs e)
+       {
+
+       }
+
+       private void txtSleepTime_TextChanged(object sender, EventArgs e)
+       {
+
+       }
+
+       private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+       {
+
+       }
+
+       private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+       {
+
+       }
+
+       private void txtAdafruitUpdateInterval_TextChanged(object sender, EventArgs e)
+       {
+
+       }
+
+       private void label8_Click(object sender, EventArgs e)
+       {
+
+       }
+
+       private void lblNOWE_Click(object sender, EventArgs e)
+       {
+
+       }
+
+       private void lblNOAE_Click(object sender, EventArgs e)
+       {
+
+       }
+   }
+
+   /*
+    * THINGS TO DO.
+    * 
+    * Need to make sure that aquisition can't start without a datafile being created.
+    * 
+    * Look at combining all the relay operations into one function and pass the filename, pin number and state as variables. --- COMPLETE
+    * Change "pythonstartpump" to "changeState" in solenoidState(). --- COMPLETE
+    * Look at combining the startPump() and stopPump() functions into one and pass the python script file as a variable. --- COMPLETE
+    * Look at combining the openSolenoid() and closeSolenoid() functions into one and pass the python script file as a variable. --- COMPLETE
+    * 
+    */
+
+                /*  atmos4.1
+                 *  
+                 *  09/01/2021 1255 - Major code purge completed.  All major functions now run from runPythonScript().
+                 *  07/01/2021 0000 - Create relayAction function to manage all python script calls.
+                 *  06/01/2021 2235 - Create single function to open or close the gas hood solenoid valve.
+                 *  06/01/2021 1819 - Remove all the if statements in the getGasContinuous function as they are not required.
+                 *  05/01/2021 1319 - Corrected Adafruit publish on continuous measurement.
+                 *  05/01/2021 1126 - Create bw to publish continuous measurements.
+                 *  05/01/2021 1054 - Change pulse sampling purge, measure and sleep times.
+                 *  04/01/2021 1546 - Remove additional delay in bw3 finishTime.
+                 *  04/01/2021 1532 - Increase finish times for purge and sampling in getGasPulsed to account for solenoid delay.
+                 *  04/01/2021 1238 - Add gas hood solenoid energised advisory...reduce delay to 1 second.
+                 *  04/01/2021 1227 - delayLoop does not work so add directly to getGasPulsed function.
+                 *  04/01/2021 1219 - Use delayLoop in getGasPulsed to create delay between solenoid opening/closing and pump starting/stopping.
+                 *  
+                 *  */
+
+
+
 
             }
-                
-
-        }
-
-        private void pulsedStandaloneToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            bwGetClimate.RunWorkerAsync();
-            bwgasPulsed.RunWorkerAsync();
-        }
-
-        private void txtSamplingTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSleepTime_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void txtAdafruitUpdateInterval_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNOWE_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNOAE_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
-
-    /*
-     * THINGS TO DO.
-     * 
-     * Need to make sure that aquisition can't start without a datafile being created.
-     * 
-     * Look at combining all the relay operations into one function and pass the filename, pin number and state as variables. --- COMPLETE
-     * Change "pythonstartpump" to "changeState" in solenoidState(). --- COMPLETE
-     * Look at combining the startPump() and stopPump() functions into one and pass the python script file as a variable. --- COMPLETE
-     * Look at combining the openSolenoid() and closeSolenoid() functions into one and pass the python script file as a variable. --- COMPLETE
-     * 
-     */
-
-    /*  atmos4.1
-     *  
-     *  09/01/2021 1255 - Major code purge completed.  All major functions now run from runPythonScript().
-     *  07/01/2021 0000 - Create relayAction function to manage all python script calls.
-     *  06/01/2021 2235 - Create single function to open or close the gas hood solenoid valve.
-     *  06/01/2021 1819 - Remove all the if statements in the getGasContinuous function as they are not required.
-     *  05/01/2021 1319 - Corrected Adafruit publish on continuous measurement.
-     *  05/01/2021 1126 - Create bw to publish continuous measurements.
-     *  05/01/2021 1054 - Change pulse sampling purge, measure and sleep times.
-     *  04/01/2021 1546 - Remove additional delay in bw3 finishTime.
-     *  04/01/2021 1532 - Increase finish times for purge and sampling in getGasPulsed to account for solenoid delay.
-     *  04/01/2021 1238 - Add gas hood solenoid energised advisory...reduce delay to 1 second.
-     *  04/01/2021 1227 - delayLoop does not work so add directly to getGasPulsed function.
-     *  04/01/2021 1219 - Use delayLoop in getGasPulsed to create delay between solenoid opening/closing and pump starting/stopping.
-     *  
-     *  */
-
-
-
-
-}
